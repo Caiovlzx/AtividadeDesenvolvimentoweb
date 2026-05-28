@@ -30,6 +30,17 @@ app.get('/usuarios/:id', (req, res) => {
     res.send('Usuario ' + ids);
 });
 
+app.get('/produtos/:nome', (req, res) => {
+    const none  = req.params.nome
+    res.send('Comprado ' + none);
+});
+
+app.get('/filmes/:id/:nome', (req, res) => {
+    const none  = req.params.nome
+    const ids = req.params.id
+    res.send('Filme ' + ids + none );
+});
+
 
 
 
