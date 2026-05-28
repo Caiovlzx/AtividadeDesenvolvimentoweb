@@ -41,8 +41,10 @@ app.get('/filmes/:id/:nome', (req, res) => {
     res.send('Filme ' + ids + none );
 });
 
-
-
+app.get('/buscar', (req, res) => {
+    const {nome} = req.query
+    res.send(`Buscando por : ${nome}`)
+});
 
 app.listen(
     3000, 
