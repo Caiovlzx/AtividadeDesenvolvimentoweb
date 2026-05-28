@@ -25,6 +25,13 @@ app.get('/inicio', (req, res) => {
     res.redirect('/');
 });
 
+app.get('/usuarios/:id', (req, res) => {
+    const ids  = req.params.id
+    res.send('Usuario ' + ids);
+});
+
+
+
 
 app.listen(
     3000, 
