@@ -46,6 +46,12 @@ app.get('/buscar', (req, res) => {
     res.send(`Buscando por : ${nome}`)
 });
 
+app.get('/produtos', (req, res) => {
+    const {categoria} = req.query
+    const {pagina} = req.query
+    res.send(`${categoria} ${pagina}`)
+});
+
 app.listen(
     3000, 
     () => console.log(`Servidor em execução`)
