@@ -52,6 +52,11 @@ app.get('/produtos', (req, res) => {
     res.send(`${categoria} ${pagina}`)
 });
 
+app.get('/usuarios', (req, res) => {
+    const {idade} = req.query
+    res.send(`Filtrando usuários com idade ${idade}`)
+});
+
 app.listen(
     3000, 
     () => console.log(`Servidor em execução`)
