@@ -1,5 +1,10 @@
 const express = require('express');
+const exphbs = require('express-handlebars');
 const app = express();
+
+
+app.engine('handlebars', exphbs.engine({defaultLayout:false}));
+app.set('view engine', 'handlebars');
 
 app.get('/', (req, res) => {
     res.send('Bem Vindo ao Sistema');
@@ -7,7 +12,6 @@ app.get('/', (req, res) => {
 
 app.get('/Sobre', (req, res) => {
     res.send('Essa aplicação é muito importante')
-
 })
 
 app.get('/contato', (req, res) => {
@@ -55,6 +59,10 @@ app.get('/produtos', (req, res) => {
 app.get('/usuarios', (req, res) => {
     const {idade} = req.query
     res.send(`Filtrando usuários com idade ${idade}`)
+});
+
+app.get('/Perfil', (req, res) => {
+    res.render('home',{nome: 'João', idade: 20});
 });
 
 app.listen(
