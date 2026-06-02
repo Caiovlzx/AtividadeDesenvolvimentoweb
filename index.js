@@ -65,6 +65,18 @@ app.get('/Perfil', (req, res) => {
     res.render('home',{nome: 'João', idade: 20});
 });
 
+app.get('/Film', (req, res) => {
+
+    const filmes =  [
+        {nome: 'Avengers', Lançamento: 2012},
+        {nome: 'Batman', Lançamento: 2008},
+        {nome: 'Superman', Lançamento: 2013}
+    ];
+
+
+    res.render('film', {filmes: filmes});
+});
+
 app.listen(
     3000, 
     () => console.log(`Servidor em execução`)
