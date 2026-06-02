@@ -82,6 +82,16 @@ app.get('/log', (req, res) => {
         nome: 'Caio'});
 });
 
+app.get('/FILMES', (req, res) => {
+
+    const filmes =  [
+        {nome: `Panico`, Lançamento: 2012},
+        {nome: `O Exorcista`, Lançamento: 2008},
+        {nome: `A Origem`, Lançamento: 2013}
+    ];
+    res.render('film', {filmes: filmes});
+});
+
 app.listen(
     3000, 
     () => console.log(`Servidor em execução`)
