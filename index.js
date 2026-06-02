@@ -72,9 +72,14 @@ app.get('/Film', (req, res) => {
         {nome: 'Batman', Lançamento: 2008},
         {nome: 'Superman', Lançamento: 2013}
     ];
-
-
     res.render('film', {filmes: filmes});
+});
+
+app.get('/log', (req, res) => {
+    res.render('mens',{
+        login: true, 
+        admin: false, 
+        nome: 'Caio'});
 });
 
 app.listen(
